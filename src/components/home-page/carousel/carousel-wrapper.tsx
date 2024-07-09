@@ -3,7 +3,7 @@ import CarouselList from "./carousel-list";
 
 type Props = {};
 
-const CarouselWrapper = (props: Props) => {
+const CarouselWrapper = ({}: Props) => {
   return (
     <div className="py-5 container">
       <CarouselList />

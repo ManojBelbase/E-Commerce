@@ -1,9 +1,9 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import React from "react";
-import { Category } from "@/types/category";
+import { TCategory } from "@/types/category";
 type Props = {
-  category: Category;
+  category: TCategory;
 };
 
 const SingleCategoryItem = ({ category }: Props) => {
