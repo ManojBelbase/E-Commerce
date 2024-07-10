@@ -2,7 +2,7 @@ import React from "react";
 import ProductData from "@/data/products.json";
 import { notFound } from "next/navigation";
 import { Tproduct } from "@/types/product";
-import ProductHero from "@/components/single-product-page/product-hero";
+import SingleProductHero from "@/components/single-product-page/product-hero";
 type Props = {
   params: {
     id: string;
@@ -22,7 +22,7 @@ const SingleProductPage = ({ params: { id } }: Props) => {
   return (
     <div>
       <section>
-        <ProductHero product={product} />
+        <SingleProductHero product={product} />
       </section>
     </div>
   );

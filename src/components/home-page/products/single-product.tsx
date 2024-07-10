@@ -16,16 +16,15 @@ const SingleProduct = ({ product }: Props) => {
       title={product.name}
     >
       <CardHeader className="p-0">
-        <figure className="border">
+        <figure>
           <Image
             src={product.images[0]}
             alt={product.name}
             width={100}
-            height={200}
-            className="w-full object-cover max-h-40"
+            height={250}
+            className="w-full object-cover max-h-52 h-52"
           />
         </figure>
-
         <CardTitle className="px-2 text-lg font-medium line-clamp-2 leading-6">
           {product.name}
         </CardTitle>

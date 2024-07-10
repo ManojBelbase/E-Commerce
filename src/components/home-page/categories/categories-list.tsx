@@ -6,8 +6,8 @@ type Props = {};
 
 const CategoriesList = ({}: Props) => {
   return (
-    <section className="grid grid-cols-6 gap-5 mt-5">
-      {(categoriesData as unknown as TCategory[]).map((category, ind) => {
+    <section className="grid gap-5 mt-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7">
+      {(categoriesData as TCategory[]).map((category, ind) => {
         return (
           <div key={ind}>
             <SingleCategoryItem category={category} />

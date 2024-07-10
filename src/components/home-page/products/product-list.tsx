@@ -6,8 +6,8 @@ type Props = {};
 
 const ProductList = ({}: Props) => {
   return (
-    <section className="grid grid-cols-4 gap-4">
-      {(ProductData as unknown as Tproduct[]).map((product, index) => {
+    <section className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 ">
+      {(ProductData as Tproduct[]).map((product, index) => {
         return (
           <div key={index}>
             <SingleProduct product={product} />

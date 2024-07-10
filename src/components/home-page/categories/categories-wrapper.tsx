@@ -5,8 +5,11 @@ type Props = {};
 
 const CategoriesWrapper = ({}: Props) => {
   return (
-    <div className="container py-10">
-      <h2 className="text-2xl font-bold ">Categories</h2>
+    <div className="container py-5">
+      <h2 className="text-2xl font-medium relative after:content-empty after:block after:w-14 after:h-[3px] after:bg-[#F85606] after:absolute after:left-0 after:bottom--1">
+        Categories
+      </h2>
+
       <CategoriesList />
     </div>
   );

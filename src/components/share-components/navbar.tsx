@@ -5,31 +5,36 @@ import { Button } from "@/components/ui/button";
 import { CiShoppingCart } from "react-icons/ci";
 type Props = {};
 
+// Navbar component
 const Navbar = (props: Props) => {
   return (
-    <nav className=" flex items-center justify-between gap-10 py-4 px-4 border-b bg-[#F85606] text-white">
+    // Main nav container with flex layout and styling
+    <nav className="flex items-center justify-between gap-4 py-4 px-4 border-b bg-[#F85606] text-white">
       {/* Logo section */}
       <section className="text-2xl font-bold">Logo</section>
-      {/* nav items section */}
-      <ul className="flex items-center gap-10 text-lg font-medium">
+      {/* Navigation items section, hidden on small screens (md:hidden) */}
+      <ul className="hidden md:flex items-center gap-6 text-lg font-medium">
         <li>
           <Link href={"/"}>Home</Link>
         </li>
         <li>
-          <Link href={"/"}>Products</Link>
+          <Link href={"/products"}>Products</Link>
         </li>
         <li>
-          <Link href={"/"}>About</Link>
+          <Link href={"/about"}>About</Link>
         </li>
       </ul>
-      <section className="flex gap-20 text-black">
-        <section>
+      {/* Search and actions section with responsive layout */}
+      <section className="flex items-center gap-4 md:gap-20 text-black w-full md:w-auto">
+        {/* Search input, full width on small screens (w-full) */}
+        <section className="w-full md:w-auto">
           <Input
-            placeholder="search in daraz"
-            className="outline-none border-0"
+            placeholder="Search in Daraz"
+            className="outline-none border-0 w-full md:w-auto"
           />
         </section>
-        <section className="flex items-center gap-5 text-black">
+        {/* Action buttons section */}
+        <section className="flex items-center gap-2 md:gap-5 text-black">
           <Button variant="outline">Login</Button>
           <Button variant="outline" size={"icon"}>
             <CiShoppingCart size={24} />
