@@ -11,11 +11,11 @@ const SingleCategoryItem = ({ category }: Props) => {
     <Card>
       <CardHeader>
         <Image
-          src={category.imageURL}
+          src={category.imageUrl}
           alt={category.name}
           width={100}
           height={100}
-          className="w-full max-h-[100px] rounded-md object-cover"
+          className="w-full  rounded-md object-cover"
         />
       </CardHeader>
       <CardContent>

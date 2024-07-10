@@ -1,5 +1,5 @@
 export type TReview = {
   username: string;
-  rating: string;
+  rating: number;
   message: string;
 };
