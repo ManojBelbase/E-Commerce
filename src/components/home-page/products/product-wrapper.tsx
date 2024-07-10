@@ -6,7 +6,7 @@ type Props = {};
 const ProductWrapper = ({}: Props) => {
   return (
     <div className="container">
-      <h2 className="text-2xl font-medium py-4">Out latest Products</h2>
+      <h2 className="text-2xl font-medium py-4">Our latest Products</h2>
       <ProductList />
     </div>
   );

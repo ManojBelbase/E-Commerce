@@ -8,18 +8,18 @@ type Props = {
 
 const SingleCategoryItem = ({ category }: Props) => {
   return (
-    <Card>
-      <CardHeader>
+    <Card className=" ">
+      <CardHeader className="p-2 ">
         <Image
           src={category.imageUrl}
           alt={category.name}
           width={100}
           height={100}
-          className="w-full  rounded-md object-cover"
+          className="w-full  rounded-md object-cover  max-h-28 h-full"
         />
       </CardHeader>
       <CardContent>
-        <h3 className="text-center">{category.name}</h3>
+        <h3 className="text-center  text-xl">{category.name}</h3>
       </CardContent>
     </Card>
   );
