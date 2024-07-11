@@ -43,7 +43,7 @@ const QuantityInput = ({}: Props) => {
             max={10}
             step={1}
             defaultValue={1}
-            className="focus:outline-none px-2 py-2 w-[4ch] text-center"
+            className="focus:outline-none px-1 py-2 w-[4ch] text-center"
             // display second valuse only if first value is null or false
             value={searchParams.get(SELECTED_QUANTITY) ?? 1}
             onChange={handleQuantityUpdate}

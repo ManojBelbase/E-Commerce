@@ -21,7 +21,7 @@ const SingleProductPage = ({ params: { id } }: Props) => {
   if (product === undefined) notFound();
   return (
     <div>
-      <section className="bg-[#f5f5f5]">
+      <section>
         <SingleProductHero product={product} />
       </section>
     </div>

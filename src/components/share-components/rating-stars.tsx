@@ -3,18 +3,18 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 type Props = {
   rating: number;
 };
-const TOTAL_STAR_LENGTH = 5;
+const TOTAL_STARS_COUNT = 5;
 const RatingStars = ({ rating }: Props) => {
-  const fullStarLength = Math.floor(rating);
-  const emptyStarLength =
-    TOTAL_STAR_LENGTH - TOTAL_STAR_LENGTH - Math.ceil(rating);
-  const halfStarLenght = TOTAL_STAR_LENGTH - fullStarLength - emptyStarLength;
+  const fullStarLength = Math.floor(rating); // 2
+  const emptyStarLength = TOTAL_STARS_COUNT - Math.ceil(rating);
+  const halfStarLength = TOTAL_STARS_COUNT - fullStarLength - emptyStarLength;
+
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 text-yellow-500">
       {new Array(fullStarLength).fill("_").map((_, ind) => (
         <FaStar key={ind} />
       ))}
-      {new Array(halfStarLenght).fill("_").map((_, ind) => (
+      {new Array(halfStarLength).fill("_").map((_, ind) => (
         <FaStarHalfAlt key={ind} />
       ))}
       {new Array(emptyStarLength).fill("_").map((_, ind) => (
