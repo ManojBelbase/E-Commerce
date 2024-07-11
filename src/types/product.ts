@@ -2,6 +2,7 @@ import { TCategory } from "./category";
 import { TReview } from "./review";
 
 export type Tproduct = {
+  avgRating: number;
   id: string;
   name: string;
   description: string;

@@ -20,7 +20,8 @@
         "rating": 4.5,
         "message": "Very nice product"
       }
-    ]
+    ],
+    "avgRating": 4.7
   },
   {
     "id": "2",
@@ -66,7 +67,8 @@
         "rating": 4.5,
         "message": "Very nice product"
       }
-    ]
+    ],
+    "avgRating": 4.2
   },
   {
     "id": "4",
