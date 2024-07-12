@@ -99,7 +99,7 @@ const SingleProductHero = ({ product }: Props) => {
           </div>
         </section>
         {/* quantity section */}
-        <QuantityInput />
+        <QuantityInput stockQunatity={product.stockQuantity} />
         {/*  buttons  add to cart and buy now */}
         <section className="mt-4 flex items-center gap-10">
           <Button
