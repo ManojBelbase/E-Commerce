@@ -24,6 +24,11 @@
         "username": "Hari Prasad",
         "rating": 4.5,
         "message": "Very nice product"
+      },
+      {
+        "username": "Ram parsad",
+        "rating": 4.9,
+        "message": "Very good product"
       }
     ],
     "avgRating": 4.7
