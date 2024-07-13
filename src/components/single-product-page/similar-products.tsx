@@ -1,17 +1,13 @@
 import React from "react";
-import ProductList from "../home-page/products/product-list";
+import ProductsList from "../home-page/products/product-list";
 
 type Props = {};
 
-const SimilarProducts = (props: Props) => {
+export default function SimilarProducts({}: Props) {
   return (
-    <div>
-      <section className="mt-12">
-        <h3 className="font-medium text-2xl">You May also like</h3>
-        <ProductList />
-      </section>
-    </div>
+    <section className="mt-10">
+      <h3 className="font-medium text-2xl mb-5">You may also like</h3>
+      <ProductsList />
+    </section>
   );
-};
-
-export default SimilarProducts;
+}

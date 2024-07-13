@@ -8,13 +8,13 @@ type Props = {};
 export default function CartPage({}: Props) {
   return (
     <main className="container py-10">
-      <header className="flex items-center justify-center flex-col gap-1">
+      <header className="flex items-start justify-start flex-col gap-1">
         <h2 className="text-4xl font-semibold">Cart</h2>
         <p className="text-muted-foreground">A list of your cart items</p>
       </header>
 
       <section className="grid grid-cols-3 gap-10 mt-10">
-        <section className="col-span-2">
+        <section className="col-span-2 border rounded-md">
           <CartItemsTable />
         </section>
 

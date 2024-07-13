@@ -58,7 +58,6 @@ const QuantityInput = ({ stockQunatity }: Props) => {
             min={1}
             max={10}
             step={1}
-            defaultValue={1}
             className="focus:outline-none px-1 py-2 w-[4ch] text-center"
             // display second valuse only if first value is null or false
             value={searchParams.get(SELECTED_QUANTITY) ?? 1}

@@ -33,7 +33,7 @@ export default function CartItemsTable({}: Props) {
             <TableHead>Price</TableHead>
             <TableHead>Quantity</TableHead>
             <TableHead>Sub Total</TableHead>
-            <TableHead></TableHead>
+            <TableHead>Remarks</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -54,14 +54,20 @@ export default function CartItemsTable({}: Props) {
                         className="object-cover"
                       />
                     </figure>
-                    <p>{cartItem.product.name}</p>
+                    <div>
+                      <p>{cartItem.product.name}</p>
+                      <p className="text-muted-foreground">No Brand</p>
+                    </div>
                   </div>
                 </TableCell>
-                <TableCell>
-                  {getDiscountedPrice(
-                    cartItem.product.price,
-                    cartItem.product.discount
-                  )}
+                <TableCell className="">
+                  <p className="text-orange-600 text-sm font-medium">
+                    Rs.{" "}
+                    {getDiscountedPrice(
+                      cartItem.product.price,
+                      cartItem.product.discount
+                    )}
+                  </p>
                 </TableCell>
                 <TableCell>{cartItem.quantity}</TableCell>
                 <TableCell>{cartItem.totalPrice}</TableCell>
