@@ -12,9 +12,9 @@ type Props = {
 const SingleProduct = ({ product }: Props) => {
   const discountPrice = getDiscountedPrice(product.price, product.discount);
   return (
-    <Link href={`/products/${product.id}`}>
+    <Link href={`/products/${product.id}`} className="">
       <Card
-        className="rounded-lg overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+        className="rounded-lg  overflow-hidden hover:shadow-lg transition-all cursor-pointer"
         title={product.name}
       >
         <CardHeader className="p-0">
