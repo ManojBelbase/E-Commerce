@@ -1,5 +1,7 @@
 import CartItemsTable from "@/components/cart/cart-item-table";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 
@@ -42,10 +44,31 @@ function OrderSummary() {
           <h4>Delivery Fee</h4>
           <span>Rs. 110</span>
         </section>
+        <section className="w-full flex gap-2">
+          <Input
+            type="text"
+            placeholder="Enter Voucher"
+            className="outline-none focus:outline-none focus:border-none"
+          />
+          <Button
+            variant="default"
+            className="bg-[#25A5D8] rounded-sm hover:bg-[#25b4ec]"
+          >
+            Apply
+          </Button>
+        </section>
         <Separator />
-        <section className="flex items-center justify-between gap-5">
+        <section className="flex items-center justify-between gap-5 ">
           <h4>Total</h4>
-          <span>Rs. 610</span>
+          <span className="text-[#F85606]">Rs. 610</span>
+        </section>
+        <section className="w-full bg-red-300">
+          <Button
+            variant="default"
+            className="bg-[#f85606] rounded-sm w-full hover:bg-[#f85700c0]"
+          >
+            PROCEED TO CHECKOUT({1})
+          </Button>
         </section>
       </CardContent>
     </Card>

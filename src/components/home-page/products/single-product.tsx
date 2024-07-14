@@ -17,7 +17,7 @@ const SingleProduct = ({ product }: Props) => {
         className="rounded-lg  overflow-hidden hover:shadow-lg transition-all cursor-pointer"
         title={product.name}
       >
-        <CardHeader className="p-0">
+        <CardHeader className="p-0 relative">
           <figure>
             <Image
               src={product.images[0]}
@@ -26,6 +26,9 @@ const SingleProduct = ({ product }: Props) => {
               height={250}
               className="w-full object-cover max-h-52 h-52"
             />
+            <p className="absolute top-1 right-1 bg-[#F85606] rounded-sm px-1 py-1 text-white">
+              {product.category.name}
+            </p>
           </figure>
           <CardTitle className="px-2 text-lg font-medium line-clamp-2 leading-6">
             {product.name}

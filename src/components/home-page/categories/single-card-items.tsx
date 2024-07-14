@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import React from "react";
 import { TCategory } from "@/types/category";
+import Link from "next/link";
 type Props = {
   category: TCategory;
 };

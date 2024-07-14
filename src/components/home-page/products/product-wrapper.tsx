@@ -9,7 +9,7 @@ const ProductWrapper = ({}: Props) => {
       <h2 className="py-4 text-2xl font-medium relative after:content-empty after:block after:w-14 after:h-[3px] after:bg-[#F85606] after:absolute after:left-0 after:bottom--1">
         Products
       </h2>
-      <ProductList />
+      <ProductList varient={"all-products"} />
     </div>
   );
 };
