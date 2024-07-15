@@ -32,7 +32,7 @@ const ProductList = ({ varient }: Props) => {
         <section className="grid grid-cols-4 gap-6">
           {(ProductData as Tproduct[]).map((product, index) => {
             return (
-              <section key={index}>
+              <section key={product.id}>
                 <SingleProduct product={product} />
               </section>
             );

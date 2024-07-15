@@ -15,8 +15,8 @@ const ProductCategory = ({ category }: Props) => {
   return (
     <div className="grid grid-cols-5 gap-4">
       {filteredData.length > 0 ? (
-        filteredData.map((product) => (
-          <div key={product.id} className="h-full">
+        filteredData.map((product, ind) => (
+          <div key={ind} className="h-full">
             <ProductList varient="all-product" />
           </div>
         ))
