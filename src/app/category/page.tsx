@@ -1,14 +1,21 @@
+"use client";
+
+import ProductCategory from "@/components/home-page/categories/product-category";
 import ProductList from "@/components/home-page/products/product-list";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 
 type Props = {};
 
-const CustomCategory = (props: Props) => {
+const CategoryPage = (props: Props) => {
+  const searchParams = useSearchParams();
+
+  const category = searchParams.get("category") || "";
   return (
     <section>
-      <h1>Category page</h1> <ProductList varient={"all-products"} />
+      <ProductList varient="category-product" />
     </section>
   );
 };
 
-export default CustomCategory;
+export default CategoryPage;

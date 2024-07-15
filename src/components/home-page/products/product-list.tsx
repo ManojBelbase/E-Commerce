@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ProductData from "@/data/products.json";
 import { Tproduct } from "@/types/product";
@@ -6,6 +8,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { getDiscountedPrice } from "@/utils/getDiscountedPrice";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+
 type Props = {
   // product:Tproduct;
   varient: string;
@@ -20,6 +24,8 @@ const ProductList = ({ varient }: Props) => {
     <section>
       {varient === "similar-product" ? (
         <SimilarProduct />
+      ) : varient === "category-product" ? (
+        <CategoryProduct />
       ) : varient === "all-product" ? (
         <AllProduct />
       ) : (
@@ -85,6 +91,57 @@ function AllProduct() {
   return (
     <section className=" grid grid-cols-2 gap-5">
       {(ProductData as Tproduct[]).map((product, index) => {
+        return (
+          <Link href={`products/${product.id}`}>
+            <section key={index}>
+              <Card
+                className="rounded-lg grid grid-cols-2 hover:shadow-lg transition-all cursor-pointer"
+                title={product.name}
+              >
+                <CardHeader className="p-0">
+                  <figure>
+                    <Image
+                      src={product.images[0]}
+                      alt={product.name}
+                      width={100}
+                      height={250}
+                      className="w-full h-72 object-cover"
+                    />
+                  </figure>
+                </CardHeader>
+                <CardContent className="p-2">
+                  <CardTitle className="px-2 text-lg font-medium line-clamp-2 leading-6">
+                    {product.name}
+                  </CardTitle>
+                  <p className="text-xl font-semibold text-orange-600">
+                    Rs. {getDiscountedPrice(product.price, product.discount)}
+                  </p>
+                  <div className="flex gap-2">
+                    <p className="line-through text-muted-foreground">
+                      {product.price}
+                    </p>
+                    <span>Rs.{product.discount}%</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+          </Link>
+        );
+      })}
+    </section>
+  );
+}
+
+function CategoryProduct() {
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category") || "";
+  const filteredData = ProductData.filter(
+    (product) => product.category.name.toLowerCase() === category.toLowerCase()
+  );
+
+  return (
+    <section className=" grid grid-cols-4 gap-5">
+      {(filteredData as Tproduct[]).map((product, index) => {
         return (
           <Link href={`products/${product.id}`}>
             <section key={index}>
