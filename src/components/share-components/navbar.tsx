@@ -37,11 +37,11 @@ const Navbar = (props: Props) => {
         <section className="flex items-center gap-2 md:gap-5 text-black">
           <Button variant="outline">Login</Button>
           {/* Shopping cart button */}
-          <Link href={"/customer/cart"}>
-            <Button variant="outline" size={"icon"}>
+          <Button variant="outline" size={"icon"} asChild>
+            <Link href={"/customer/cart"}>
               <CiShoppingCart size={24} />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </section>
       </section>
     </nav>
