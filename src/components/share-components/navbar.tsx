@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { CiShoppingCart } from "react-icons/ci";
+import { signOut } from "next-auth/react";
 type Props = {};
 
 // Navbar component
@@ -35,7 +37,12 @@ const Navbar = (props: Props) => {
         </section>
         {/* Action buttons section */}
         <section className="flex items-center gap-2 md:gap-5 text-black">
-          <Button variant="outline">Login</Button>
+          <Button variant="outline" asChild>
+            <Link href={"/"}>Login</Link>
+          </Button>
+          <Button variant="outline" onClick={() => signOut()}>
+            logout
+          </Button>
           {/* Shopping cart button */}
           <Button variant="outline" size={"icon"} asChild>
             <Link href={"/customer/cart"}>
