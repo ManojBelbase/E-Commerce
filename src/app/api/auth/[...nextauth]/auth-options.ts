@@ -38,6 +38,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/login",
+    signIn: "/auth/login",
+    signOut: "auth/logout",
+    error: "/auth/error",
   },
 };
