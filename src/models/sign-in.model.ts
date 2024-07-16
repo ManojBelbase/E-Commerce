@@ -2,7 +2,7 @@ import { EInputType, TFormField } from "@/types/form-field";
 import { z } from "zod";
 export const signInFormSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
-  password: z.string().min(1, { message: "Please enter a password" }),
+  password: z.string().min(2, { message: "Please enter a password" }),
 });
 
 export type TsignInFormSchema = z.infer<typeof signInFormSchema>; //form field ma

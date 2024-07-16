@@ -38,7 +38,7 @@ const Navbar = (props: Props) => {
         {/* Action buttons section */}
         <section className="flex items-center gap-2 md:gap-5 text-black">
           <Button variant="outline" asChild>
-            <Link href={"/"}>SignUp</Link>
+            <Link href={"/auth/signup"}>SignUp</Link>
           </Button>
           <Button variant="outline" onClick={() => signOut()}>
             logout
