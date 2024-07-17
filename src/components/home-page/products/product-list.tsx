@@ -62,6 +62,7 @@ function SimilarProduct() {
                     alt={product.name}
                     width={100}
                     height={250}
+                    sizes={"100vw"}
                     className="w-full  max-h-72 object-cover"
                   />
                 </figure>
@@ -105,6 +106,7 @@ function AllProduct() {
                       alt={product.name}
                       width={100}
                       height={250}
+                      sizes={"100vw"}
                       className="w-full h-72 object-cover"
                     />
                   </figure>

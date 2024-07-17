@@ -2,8 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-
+import { tuple, z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -26,6 +25,9 @@ import {
 } from "@/models/sign-in.model";
 import { signIn } from "next-auth/react";
 
+import { Toaster } from "@/components/ui/toaster";
+import { toast } from "sonner";
+
 type Props = {
   callbackUrl: string;
 };
@@ -37,12 +39,18 @@ const LoginPage = (props: Props) => {
   });
 
   async function onSubmit(values: TsignInFormSchema) {
-    await signIn("credentials", {
-      redirect: true,
-      email: values.email,
-      password: values.password,
-      callbackUrl: props.callbackUrl ?? "http://localhost:3000/customer/cart",
-    });
+    try {
+      await signIn("credentials", {
+        redirect: true,
+        email: values.email,
+        password: values.password,
+        callbackUrl: props.callbackUrl ?? "http://localhost:3000/customer/cart",
+      });
+      toast.success("login vayo");
+    } catch (error) {
+      toast.error("errror");
+      console.log("error");
+    }
   }
 
   return (
@@ -63,6 +71,7 @@ const LoginPage = (props: Props) => {
                       placeholder={formfield.placeholder}
                       required={formfield.required}
                       name={formfield.name}
+                      type={formfield.type}
                     />
                   </FormControl>
                   <FormDescription>{formfield.description}</FormDescription>
