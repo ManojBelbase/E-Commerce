@@ -7,7 +7,7 @@ type Props = {
 
 export const metadata: Metadata = {
   title: "Sign In | With My App",
-  description: "this is tjhe title of sign in",
+  description: "This is the title of sign in",
 };
 const SignInLayout = async ({ children }: Props) => {
   return <div>{children}</div>;

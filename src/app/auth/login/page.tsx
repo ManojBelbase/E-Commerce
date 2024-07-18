@@ -54,7 +54,8 @@ const LoginPage = (props: Props) => {
   }
 
   return (
-    <section className="container py-10 flex justify-center">
+    <section className="container py-10 flex justify-center flex-col border-2 items-center max-w-80 w-full mt-10 rounded-md">
+      <h1 className="text-left font-bold text-2xl mb-7">Login Form</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           {signInFormField.map((formfield) => (
